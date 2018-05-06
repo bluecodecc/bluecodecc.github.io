@@ -4,42 +4,7 @@
 <li><p>配置服务端配置文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bind_port = 7000</span><br><span class="line">#服务器端口</span><br><span class="line">vhost_http_port = 80</span><br><span class="line">#http端口</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>配置客户端配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 139.199.108.90</span><br><span class="line">#远程服务器地址</span><br><span class="line">server_port = 7000</span><br><span class="line">#远程服务器端口</span><br><span class="line">[web]</span><br><span class="line">type = http</span><br><span class="line">local_port = 80</span><br><span class="line">custom_domains = admin.bluecode.cc</span><br><span class="line">#自定义域名</span><br><span class="line">[web]</span><br><span class="line">type = http</span><br><span class="line">local_port = 2333</span><br><span class="line">custom_domains = cloud.bluecode.cc</span><br><span class="line"></span><br><span class="line">[ssh]</span><br><span class="line">type = tcp</span><br><span class="line">local_ip = 127.0.0.1</span><br><span class="line">local_port = 22</span><br><span class="line">remote_port = 6000</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>配置好所需自定义文件后ssh远程服务器，get到一个知识点“ssh指定私钥访问远程服务器</p>
-<p><code>ssh -i &quot;秘钥路径&quot; 用户名@IP地址</code></p>
-</li>
-</ul>
-<ul>
-<li><p>创建文件夹</p>
-<p><code>mkdir /usr/local/frp</code></p>
-</li>
-<li><p>上传文件(指定私钥方式，当然也可以直接输入密码)</p>
-<p><code>scp -i 秘钥路径  上传文件 用户名@IP地址:/usr/local/frps</code></p>
-</li>
-<li><p>修改权限</p>
-<p><code>chmod -R 777 /usr/local/frps/</code></p>
-</li>
-<li><p>运行服务端</p>
-<ol>
-<li><p>手动运行</p>
-<p><code>./frps -c ./frps.ini</code></p>
-</li>
-<li><p>开机自动运行(在文件/etc/rc.local尾部添加以下代码)</p>
-<p><code>/usr/local/frps/frps -c /usr/local/frps/frps.ini -L /usr/local/frps/frps.log</code></p>
-</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>运行客户端</p>
-<p>直接将客户端配置文件复制到路由器</p>
-</li>
-</ul>
-</div><div class="article-footer"><a class="article-more" href="/2018/05/06/frp实现内网穿透/#more">more>></a><div class="article-tags"><i class="fa fa-tag" aria-hidden="true"></i></div></div></div><div class="recent-post-item"><a class="article-title" href="/2018/05/04/博客安装记录/">博客安装记录</a><time class="article-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-04</time><div class="article-inner"><pre><code>由于各种各样的原因重复搭建了很多次本博客，每次都是百度下教程，一步一步，很是浪费时间，但是每次都觉得记录下安装过程也浪费时间，一直没有写，所以这次还是记录下吧。
+</ul></div><div class="article-footer"><a class="article-more" href="/2018/05/06/frp实现内网穿透/#more">more>></a><div class="article-tags"><i class="fa fa-tag" aria-hidden="true"></i></div></div></div><div class="recent-post-item"><a class="article-title" href="/2018/05/04/博客安装记录/">博客安装记录</a><time class="article-date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-05-04</time><div class="article-inner"><pre><code>由于各种各样的原因重复搭建了很多次本博客，每次都是百度下教程，一步一步，很是浪费时间，但是每次都觉得记录下安装过程也浪费时间，一直没有写，所以这次还是记录下吧。
 确实老了，很多东西不记录确实记不住了，之前踩过的一些坑现在确实已经忘记了。
 </code></pre><ul>
 <li>安装node.js，方法很多，我直接官网下载最新版本10.0后安装hexo报错，提示不兼容，然后卸载，发现mac下卸载很是麻烦，找了很久找到了一个自称完全卸载的命令，没有验证拿来用了<code>node sudo rm -rf /usr/local/{bin/{node,npm},lib/node_modules/npm,lib/node,share/man/*/node.*}</code>然后brew安装发现还是最新版，只好卸载了，官网下载8.0的安装包安装</li>
