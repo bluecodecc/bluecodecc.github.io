@@ -14,6 +14,7 @@
 #pagination .pagination,
 .recent-post-item,
 #post,
+.one-category-list,
 .one-tag-list {
   margin: 0 auto;
   width: 35rem;
@@ -80,6 +81,7 @@
   #pagination .pagination,
   .recent-post-item,
   #post,
+  .one-category-list,
   .one-tag-list {
     width: 100%;
   }
@@ -203,6 +205,10 @@ hr {
 }
 #code-pl .code-pl-input {
   color: #fc635e;
+}
+#code-pl .category {
+  display: inline-block;
+  margin-right: 5px;
 }
 #code-pl .tag {
   display: inline-block;
@@ -586,6 +592,23 @@ pre .comment {
   #post .article-title {
     font-size: 1.2rem;
   }
+}
+.one-category-list {
+  margin-bottom: 50px;
+  border: 0;
+  box-shadow: 0 0 0 #fff;
+}
+.one-category-list .category-title {
+  margin-left: 15px;
+  font-size: 20px;
+  color: #5da0c8;
+}
+.one-category-list i {
+  color: #5da0c8;
+}
+.one-category-list .post-title {
+  margin: 1rem 0 1rem 40px;
+  font-size: 18px;
 }
 .one-tag-list {
   margin-bottom: 50px;
